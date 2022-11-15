@@ -1,0 +1,26 @@
+.footer{
+	background-color: var(--primary-color);
+	height: auto;
+	padding: 15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	color: white;
+	align-items: center;
+}
+.footer-container{
+	align-items: center;
+}
+.up-icon{
+	transform: rotate(180deg);
+	font-size: 2rem;
+	background-color: white;
+	border-radius: 20px;
+	color:var(--dark-green);
+	padding:5px;
+}
+.bar{
+	height: 1px;
+	width: 80px;
+	content:'';
+	background-color: var(--soft-green);
+}

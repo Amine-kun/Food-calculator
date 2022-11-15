@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import react from 'react';
+import {Routes, Route} from 'react-router-dom';
 import './App.css';
+
+import Landing from './Containers/Landing/Landing';
+import Authentication from './Containers/Authentication/Authentication';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="app app-flex full-v">
+        <div className="app-container">
+          <Routes> 
+              <Route path="/*" element={<Landing/>}/>
+              <Route path="/Auth/*" element={<Authentication/>}/>
+          </Routes>
+        </div>
+    </section>
   );
 }
 

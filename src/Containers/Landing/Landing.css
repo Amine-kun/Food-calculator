@@ -1,0 +1,162 @@
+.pannel{
+	background-color: var(--soft-green);
+	height: 300px;
+	border-radius: var(--radius);
+	padding: 0 100px;
+	position: relative;
+	justify-content: flex-start;
+}
+.about{
+	max-width: 400px;
+	width: 100%;
+	z-index: 2;
+}
+.start{
+	gap: 10px;
+	position: relative;
+}
+.start:after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 0;
+	background-color: var(--black-color);
+	transition: 300ms ease-in-out;
+}
+.start:hover:after{
+	width: 96%;
+}
+.start .icon{
+	position: relative;
+	top: 1px;
+	font-size: 1.6rem;
+}
+.pannel-pic{
+	height: auto;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	object-fit: cover;
+	width: 700px;
+	z-index: 2;
+}
+
+.spacer{
+	aspect-ratio: 960/300;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 0;
+	opacity: 0.5;
+	border-radius: var(--radius);
+}
+.layer{
+	background-image: url('../../Assets/svg.svg');
+}
+
+.recipes{
+	margin:20px 0;
+}
+.header{
+	align-items: flex-start;
+}
+.search{
+	gap: 10px;
+	width: 70%;
+	padding: 8px 15px;
+	border-radius: 5px;
+	background-color: var(--grey-color);
+}
+.search-input{
+	padding: 5px 2px;
+	background-color: transparent;
+	border: none;
+	color: var(--black-color);
+	outline: none;
+	width: 100%;
+}
+.sort{
+	justify-content: flex-start;
+	margin-left: auto;
+	background-color: var(--secondary-color);
+	color: white;
+	padding: 10px 15px;
+	border-radius: 20px;
+	gap: 10px;
+	position: relative;
+	transition: 300ms;
+	height: 40px;
+	overflow: hidden;
+}
+.sort-drop{
+	height: 140px;
+}
+
+.sorts{
+	border-top: 1px solid var(--primary-color);
+	width: 100%;
+	padding: 10px 0;
+	gap:0px;
+}
+.sorts p{
+	padding: 2px 5px;
+	width: 100%;
+	border-radius: 4px;
+}
+.sorts p:hover{
+	background-color: var(--primary-color) ;
+}
+.main-recipes{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.recipes-cards{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  	gap: 10px;
+  	margin: 15px 0;
+  	width: 100%;
+}
+.btn-more{
+	width: 150px;
+}
+/*======media query======*/
+
+@media screen and (max-width: 800px){
+	.pannel{
+		padding: 0 30px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.pannel-pic{
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 1100px){
+	.pannel-pic{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 950px){
+	.pannel-pic{
+		display: none;
+	}
+	.sortby{
+		display: none;
+	}
+	.pannel{
+		justify-content: center;
+	}
+}

@@ -1,0 +1,52 @@
+.auth{
+	height: 100vh;
+}
+.auth-container{
+	max-width: 500px;
+	padding: 15px;
+	width: 100%;
+	height: 500px;
+	border-radius: 20px;
+	background-color: var(--primary-color);
+	justify-content: flex-start;
+}
+
+.inputs{
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	color:white;
+	z-index: 1;
+}
+.navigator{
+	width: 100%;
+}
+.navbtn{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color:white;
+	padding: 15px;
+	font-weight: bold;
+	border-bottom:2px solid transparent;
+}
+.active{
+	border-bottom:2px solid white;
+}
+.spacer{
+	aspect-ratio: 960/300;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 0;
+	opacity: 0.5;
+	border-radius: var(--radius);
+}
+.layer{
+	background-image: url('../../Assets/svg.svg');
+}

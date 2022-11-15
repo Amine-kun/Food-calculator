@@ -1,0 +1,15 @@
+.navbar{
+ 	justify-content: flex-start;
+ 	padding: 20px 0;
+}
+.logo{
+	cursor: pointer;
+	  transition: 200ms ease-in-out;
+}
+.logo:hover{
+	color: var(--primary-color);
+}
+.nav-btns{
+	margin-left: auto;
+	gap: 10px;
+}

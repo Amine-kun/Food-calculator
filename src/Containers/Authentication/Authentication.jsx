@@ -1,30 +1,36 @@
-import React, {useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import './Authentication.css';
-import {Link, Routes, Route} from 'react-router-dom';
+import {NavLink, Routes, Route, useLocation} from 'react-router-dom';
 import Signin from '../../Pages/Signin/Signin';
 
 const Authentication = () => {
 
-	const [active, setActive] = useState('Signin')
+	const location = useLocation();
+	const [active, setActive] = useState('');
+
+	useEffect(() => {
+		const current = location.pathname.split('/')[2]
+		setActive(current)
+	}, [location.pathname])
 
 	return (
 		<section className="auth full app-flex">
 			<div className="auth-container app-flex"> 
 			<div className="spacer layer"></div>
 				<div className="inputs full app-flex-wrap">
-					<h2>Signin to Foodilizer</h2> 
+					<h2>{active} to Foodilizer</h2> 
 					<span className="bar" style={{width:'150px'}}></span>
 					<div className="navigator app-flex">
-						<Link to="Signin" onClick={()=>setActive('Signin')}>
-							<button className={`navbtn ${active === 'Signin' && 'active'}`}>
+						<NavLink to="Signin">
+							<button className='navbtn'>
 								Signin
 							</button>
-						</Link>
-						<Link to="Signup" onClick={()=>setActive('Signup')}>
-							<button className={`navbtn ${active === 'Signup' && 'active'}`}>
+						</NavLink>
+						<NavLink to="Signup">
+							<button className='navbtn'>
 								Signup
 							</button>
-						</Link>
+						</NavLink>
 					</div>
 
 					<Routes>

@@ -1,0 +1,70 @@
+.input{
+	background-color: white;
+	color: var(--primary-color);
+	padding: 10px;
+	border-radius:10px ;
+	position: relative;
+	border: 4px solid transparent;
+	cursor: text;
+	transition: all 200ms ease-out;
+	width: 100%;
+	justify-content: flex-start;
+}
+.input-focus{
+	border: 4px solid var(--soft-green);
+}
+.user-input{
+	background-color: transparent;
+	border: none;
+	outline: none;
+	margin-top:10px;
+	width: 100%;
+}
+
+input:focus + .label,
+    input:not(:placeholder-shown) + .label  {
+      color: #111;
+      transform: translate(0, -2.75rem);
+      top:50%;
+	  transform: translateY(-50%);
+    }
+
+.label {
+	cursor: text;
+  display: block;
+  position: absolute;
+}
+
+@supports (not (-ms-ime-align:auto)) {
+    .label {
+      color: #999;
+	  top:50%;
+	  transform: translateY(-50%);
+      transition: all 0.2s ease-out;
+    }
+
+    input:focus + .label,
+    input:not(:placeholder-shown) + .label {
+      color: var(--primary-color);
+      top: 10px;
+      font-size: 0.7rem;
+    }
+}
+form{
+	width: 70%;
+	margin-top: 30px;
+}
+.icon{
+	font-size: 1.3rem;
+}
+.reset{
+	align-self: flex-start;
+	margin: 0 0 10px 15px;
+}
+.log-btn{
+	background-color: transparent;
+	color: white;
+}
+.log-btn:hover{
+	background-color: var(--soft-green);
+}

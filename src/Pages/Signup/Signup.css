@@ -52,14 +52,12 @@ input:focus + .label,
 }
 form{
 	width: 60%;
+	height: auto;
 }
 .icon{
 	font-size: 1.3rem;
 }
-.reset{
-	align-self: flex-start;
-	margin: 0 0 10px 15px;
-}
+
 .log-btn{
 	background-color: transparent;
 	color: white;

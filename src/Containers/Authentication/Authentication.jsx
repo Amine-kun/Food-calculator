@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './Authentication.css';
 import {NavLink, Routes, Route, useLocation} from 'react-router-dom';
 import Signin from '../../Pages/Signin/Signin';
+import Signup from '../../Pages/Signup/Signup';
 
 const Authentication = () => {
 
@@ -35,6 +36,7 @@ const Authentication = () => {
 
 					<Routes>
 						<Route path="/Signin" element={<Signin/>}/>
+						<Route path="/Signup" element={<Signup/>}/>
 					</Routes>
 				</div>
 			</div>

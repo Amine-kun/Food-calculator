@@ -4,6 +4,7 @@ import './App.css';
 
 import Landing from './Containers/Landing/Landing';
 import Authentication from './Containers/Authentication/Authentication';
+import Home from './Containers/Home/Home';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes> 
               <Route path="/*" element={<Landing/>}/>
               <Route path="/Auth/*" element={<Authentication/>}/>
+              <Route path="/Home/*" element={<Home/>}/>
           </Routes>
         </div>
     </section>

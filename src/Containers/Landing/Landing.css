@@ -1,3 +1,7 @@
+.landing{
+	padding: 0 15px;
+	height: auto !important;
+}
 .pannel{
 	background-color: var(--soft-green);
 	height: 300px;

@@ -9,13 +9,13 @@ import Home from './Containers/Home/Home';
 function App() {
   return (
     <section className="app app-flex full-v">
-        <div className="app-container">
+
           <Routes> 
               <Route path="/*" element={<Landing/>}/>
               <Route path="/Auth/*" element={<Authentication/>}/>
               <Route path="/Home/*" element={<Home/>}/>
           </Routes>
-        </div>
+
     </section>
   );
 }

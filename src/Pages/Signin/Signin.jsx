@@ -22,7 +22,7 @@ const Signin = () => {
 			</label>
 			<h5 className="reset pointer">Forgot your password?</h5>
 			<div className="app-flex" style={{gap:'5px'}} >
-				<Link to="/Home">
+				<Link to="/Home/KCAL">
 					<button
 						style={{backgroundColor:'white', color:'var(--primary-color)'}}
 						className="btn main-btn">

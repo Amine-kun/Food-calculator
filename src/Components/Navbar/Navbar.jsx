@@ -1,12 +1,13 @@
 import React from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
+import logo from '../../Assets/logo.png';
 
 const Navbar = () => {
 	return (
 		<header className="navbar app-flex">
 			<div className="brand">
-				<h2 className="logo">Foodilizer</h2>
+				<img alt="foodilizer-logo" src={logo} className="logo"/>
 			</div>
 			<div className="nav-btns app-flex">
 				<Link to="/Auth/Signin">

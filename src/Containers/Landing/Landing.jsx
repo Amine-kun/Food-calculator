@@ -14,7 +14,7 @@ const Landing = () => {
 	const [expended, setExpended] = useState(false);
 
 	return (
-		<section className="landing full">
+		<section className="landing full app-container">
 			<Navbar/>
 			<div className="pannel full app-flex">
 				<span className="about app-flex-wrap">
@@ -51,6 +51,8 @@ const Landing = () => {
 				</div>
 				<div className="full main-recipes">
 					<div className="recipes-cards">
+						<FoodCard/>
+						<FoodCard/>
 						<FoodCard/>
 						<FoodCard/>
 						<FoodCard/>

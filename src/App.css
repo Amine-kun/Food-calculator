@@ -5,7 +5,6 @@
   color:var(--black-color);
   overflow-x:hidden;
   align-items: flex-start !important;
-  padding: 0 15px;
 }
 
 .app-container{
@@ -71,4 +70,10 @@
 }
 .sub-btn:focus{
  border: 3px solid var(--soft-green);
+}
+.bar-2{
+  height: 1px;
+  width: 100%;
+  background-color: var(--primary-color);
+  margin: 10px 0;
 }

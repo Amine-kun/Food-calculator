@@ -1,5 +1,6 @@
 .auth{
 	height: 100vh;
+	padding: 0 15px;
 }
 .auth-container{
 	max-width: 500px;

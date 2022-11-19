@@ -3,8 +3,9 @@
  	padding: 20px 0;
 }
 .logo{
+	height: auto;
+	width: 175px;
 	cursor: pointer;
-	  transition: 200ms ease-in-out;
 }
 .logo:hover{
 	color: var(--primary-color);

@@ -1,5 +1,11 @@
 .analyzer{
-	gap:30px;
+	gap: 15px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+.control-section{
+	width: 275px;
 }
 .heading{
 	background-color: var(--secondary-color);
@@ -7,11 +13,13 @@
 	border-radius: 10px;
 	color: white;
 	width: 100%;
+	text-align: center;
 }
 .selectors{
 	background-color: var(--grey-color);
 	padding: 15px;
 	border-radius: 10px;
+	width: 100%;
 }
 .btn-edit{
 	width: 100%;
@@ -21,4 +29,97 @@
 .add-icon{
 	color: white;
 	font-size: 1.3rem;
+}
+select{
+	width: 100%;
+	font-size: 1rem;
+	outline: none;
+	cursor: pointer;
+}
+.selector-inputs{
+	padding: 16px 10px;
+	border: none;
+	border-radius: 8px;
+	color: #999;
+}
+.drop-icon{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	font-size: 1.1rem;
+	color: var(--secondary-color);
+}
+.drop-label{
+	width: 100%;
+	position: relative;
+}
+.details-section{
+	background-color: var(--grey-color);
+	padding: 15px;
+	border-radius: 10px;
+	width: calc(100% - 275px);
+	height: 200px;
+}
+.bar-2{
+	position: relative;
+}
+.sub-bar{
+	background-color: var(--primary-color);
+	height: 4px;
+	width: 150px;
+	position: absolute;
+	bottom: 0;
+}
+.clear-btn{
+	gap: 6px;
+	padding: 12px 20px;
+	background-color: white;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	color: var(--secondary-color);
+	transition: all 0.2s ease-in-out;
+}
+.clear-btn:hover{
+	background-color: var(--soft-green);
+}
+.clear-icon{
+	font-size: 1.2rem;
+}
+.heading-details{
+	justify-content: flex-start;
+}
+.filters{
+	gap:5px;
+	position: relative;
+	margin-left: auto ;
+	padding: 8px 20px 8px 20px;
+	border-left: 2px solid #95bf4838;
+}
+.dish-icon{
+	font-size: 1.2rem;
+}
+.drop-down{
+	position: absolute;
+	top:70px;
+	right: 20px;
+	background-color: white;
+	padding: 10px 15px;
+	z-index: 0;
+	border-radius: 8px;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+	gap:0;
+}
+.h5:first-child{
+	width: 100%;
+	border-bottom: 1px solid #95bf4838;
+	padding-bottom:8px ;
+	margin-bottom: 8px;
+}
+.show-tab{
+	opacity: 1;
+	top:35px;
+	z-index: 5;
 }

@@ -1,7 +1,10 @@
 .homepage{
 	justify-content: flex-start;
 	align-items: flex-start;
+	gap: 0;
 }
 .pages-container{
 	padding: 20px;
+	width: calc(100% - 260px);
+	color: var(--black-color);
 }

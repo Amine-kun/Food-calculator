@@ -74,6 +74,6 @@
 .bar-2{
   height: 1px;
   width: 100%;
-  background-color: var(--primary-color);
-  margin: 10px 0;
+  background-color: #95bf4838;
+  margin: 17px 0;
 }

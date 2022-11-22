@@ -38,6 +38,9 @@
 	border-left: 3px solid transparent;
 	transition: all 0.2s ease-out;
 }
+.tab:hover{
+	color: var(--dark-green);
+}
 .nav .active{
 	color: var(--dark-green);
 	border-left: 3px solid var(--secondary-color);

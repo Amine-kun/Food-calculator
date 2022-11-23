@@ -6,5 +6,6 @@
 .pages-container{
 	padding: 20px;
 	width: calc(100% - 260px);
+	height: 100%;
 	color: var(--black-color);
 }

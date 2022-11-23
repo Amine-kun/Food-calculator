@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
 import './Analyzer.css';
 import '../Signup/Signup.css';
+import FoodDetails from '../../Components/FoodDetails/FoodDetails';
 
 import {RiAddFill} from 'react-icons/ri';
 import {IoIosArrowDown} from 'react-icons/io';
 import {FiTrash2, FiBookmark} from 'react-icons/fi';
-import {BiDish} from 'react-icons/bi';
+import {BiDish, BiDetail} from 'react-icons/bi';
 
 const foods=['Carot','apples', 'oranges', 'pumpkin','tomatos'];
 const Analyzer = () => {
@@ -52,18 +53,28 @@ const Analyzer = () => {
 						<FiBookmark className="clear-icon"/>
 						<h5>Save</h5>
 					</button>
-					<div className="filters pointer app-flex" onClick={()=>setShow(!show)}>
+					<div className="filters pointer app-flex hover" onClick={()=>setShow(!show)}>
 						<BiDish className="dish-icon"/>
 						<h5 style={{margin:'0 5px'}}>{active}</h5>
 						<IoIosArrowDown/>
-
 						<span className={`drop-down app-flex-wrap ${show && 'show-tab'}`}>	
 							<h5 className="h5" onClick={()=>setActive('All meals')}>All meals</h5>
 							<h5 className="h5" onClick={()=>setActive('Saved meals')}>Saved meals</h5>
 						</span>
 					</div>
+					<div className="pointer more app-flex hover">
+						<BiDetail className=""/>
+						<h5>More info</h5>
+					</div>
 				</div>
 				<div className='bar-2'></div>
+				<div className="detailer app-flex-wrap">
+					<FoodDetails id="1"/>
+					<FoodDetails id="2"/>
+					<FoodDetails id="3"/>
+					<FoodDetails id="4"/>
+					<FoodDetails id="5"/>
+				</div>
 			</div>
 		</section>
 	)

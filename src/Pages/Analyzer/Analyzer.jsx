@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import './Analyzer.css';
 import '../Signup/Signup.css';
+import {useNavigate} from 'react-router-dom';
 import FoodDetails from '../../Components/FoodDetails/FoodDetails';
 
 import {RiAddFill} from 'react-icons/ri';
@@ -11,8 +12,10 @@ import {BiDish, BiDetail} from 'react-icons/bi';
 const foods=['Carot','apples', 'oranges', 'pumpkin','tomatos'];
 const Analyzer = () => {
 
+	const navigate = useNavigate();
 	const [show, setShow] = useState(false);
 	const [active, setActive] = useState('All meals');
+	const [selected, setSelected] = useState([]);
 
 	return (
 		<section className="analyzer full app-flex">
@@ -23,7 +26,7 @@ const Analyzer = () => {
 						<select className="selector-inputs " id="select">
 							<option default>Select Food</option>
 							{foods.map((food,i)=>(
-								<option className="food-samples">{food}</option>
+								<option className="food-samples" key={i}>{food}</option>
 								))}
 						</select>
 						<IoIosArrowDown className="drop-icon"/>
@@ -47,8 +50,9 @@ const Analyzer = () => {
 				<div className="app-flex heading-details">	
 					<button className="app-flex clear-btn">
 						<FiTrash2 className="clear-icon"/>
-						<h5>Clear All</h5>
+						<h5>Clear</h5>
 					</button>
+
 					<button className=" app-flex clear-btn">
 						<FiBookmark className="clear-icon"/>
 						<h5>Save</h5>
@@ -62,18 +66,18 @@ const Analyzer = () => {
 							<h5 className="h5" onClick={()=>setActive('Saved meals')}>Saved meals</h5>
 						</span>
 					</div>
-					<div className="pointer more app-flex hover">
+					<div className={`pointer more app-flex hover ${selected.length === 0 && 'appear'}`} onClick={()=>selected.length !== 0 ? navigate('/Home/KCAL/details') : null}>
 						<BiDetail className=""/>
 						<h5>More info</h5>
 					</div>
 				</div>
 				<div className='bar-2'></div>
 				<div className="detailer app-flex-wrap">
-					<FoodDetails id="1"/>
-					<FoodDetails id="2"/>
-					<FoodDetails id="3"/>
-					<FoodDetails id="4"/>
-					<FoodDetails id="5"/>
+					<FoodDetails id="1" selected={selected} setSelected={setSelected}/>
+					<FoodDetails id="2" selected={selected} setSelected={setSelected}/>
+					<FoodDetails id="3" selected={selected} setSelected={setSelected}/>
+					<FoodDetails id="4" selected={selected} setSelected={setSelected}/>
+					<FoodDetails id="5" selected={selected} setSelected={setSelected}/>
 				</div>
 			</div>
 		</section>

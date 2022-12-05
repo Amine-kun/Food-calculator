@@ -1,10 +1,19 @@
 import React from 'react';
 import './FoodDetails.css';
 
-const FoodDetails = ({id}) => {
+const FoodDetails = ({id, setSelected, selected}) => {
+	const setCard = () =>{
+		if(selected.includes(id)){
+			let filtering = selected.filter(card=> card !== id)
+			setSelected(filtering)
+		} else {
+			 setSelected((prev)=>[...prev, id])
+		}
+	}
+
 	return (
 		<label htmlFor={id} className="food app-flex">
-			<input id={id} type="checkbox" className="checker"/>
+			<input id={id} type="checkbox" className="checker"  onClick={setCard}/>
 			<div className="checkmark"></div>
 			<h5>Apples</h5>
 			<h5 className='quan'><b>3</b> grams</h5>

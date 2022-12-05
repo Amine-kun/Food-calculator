@@ -135,3 +135,11 @@ select{
 	justify-content: flex-start;
 	overflow-y:auto ;
 }
+.appear{
+	color: grey;
+	cursor: not-allowed;
+}
+
+.appear:hover{
+	color: grey;
+}

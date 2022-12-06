@@ -5,7 +5,6 @@ import {Routes, Route} from 'react-router-dom';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Analyzer from '../../Pages/Analyzer/Analyzer';
 import Recipes from '../../Pages/Recipes/Recipes';
-import SampleDetails from '../../Pages/sampleDetails/sampleDetails';
 
 
 
@@ -17,7 +16,6 @@ const Home = () => {
 				<Routes>
 					<Route path="/KCAL" element={<Analyzer/>}/>
 					<Route path="/Recipes" element={<Recipes/>}/>
-					<Route path="/KCAL/details" element={<SampleDetails/>}/>
 				</Routes>
 			</div>
 		</section>

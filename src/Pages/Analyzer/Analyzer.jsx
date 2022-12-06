@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import './Analyzer.css';
 import '../Signup/Signup.css';
-import {useNavigate} from 'react-router-dom';
 import FoodDetails from '../../Components/FoodDetails/FoodDetails';
+import SampleDetails from '../sampleDetails/sampleDetails';
 
 import {RiAddFill} from 'react-icons/ri';
 import {IoIosArrowDown} from 'react-icons/io';
@@ -12,12 +12,15 @@ import {BiDish, BiDetail} from 'react-icons/bi';
 const foods=['Carot','apples', 'oranges', 'pumpkin','tomatos'];
 const Analyzer = () => {
 
-	const navigate = useNavigate();
 	const [show, setShow] = useState(false);
 	const [active, setActive] = useState('All meals');
 	const [selected, setSelected] = useState([]);
+	const [showDetails, setShowDetails] = useState(false);
 
 	return (
+		<>
+		{showDetails && <SampleDetails selected={selected} setShowDetails={setShowDetails}/>}
+
 		<section className="analyzer full app-flex">
 			<div className="control-section app-flex-wrap">
 				<h5 className="heading">Select food sample</h5>
@@ -34,7 +37,7 @@ const Analyzer = () => {
 					<label htmlFor="quantity" className="app-flex input">
 					  <input type="number" id="quantity" min="0" name="quantity" placeholder=" " className="user-input"/>
 					  <label htmlFor="quantity" className="label">Enter a Quantity</label>
-					  <h5>g</h5>
+					  <h5>Gram</h5>
 					</label>
 					<button className="btn main-btn app-flex btn-edit" style={{gap:'5px'}}>
 					 <RiAddFill className="add-icon"/>
@@ -66,7 +69,7 @@ const Analyzer = () => {
 							<h5 className="h5" onClick={()=>setActive('Saved meals')}>Saved meals</h5>
 						</span>
 					</div>
-					<div className={`pointer more app-flex hover ${selected.length === 0 && 'appear'}`} onClick={()=>selected.length !== 0 ? navigate('/Home/KCAL/details') : null}>
+					<div className={`pointer more app-flex hover ${selected.length === 0 && 'appear'}`} onClick={()=>selected.length !== 0 ? setShowDetails(true) : null}>
 						<BiDetail className=""/>
 						<h5>More info</h5>
 					</div>
@@ -81,6 +84,7 @@ const Analyzer = () => {
 				</div>
 			</div>
 		</section>
+		</>
 	)
 }
 

@@ -16,7 +16,7 @@ const navs = [{nav:"Food KCAL",icon:TbCalculator, url:'KCAL'},
 				{nav:"History",icon:BiCalendarEdit, url:'History'}]
 const Sidebar = () => {
 
-	let status = false;
+	let status = true;
 
 	return (
 		<section className="sidebar app-flex-wrap">

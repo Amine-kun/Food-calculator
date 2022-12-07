@@ -8,9 +8,9 @@
 }
 .details-container{
 	width: 90%;
-	max-height: 90%;
-	height: 100%;
-		background-color: var(--grey-color);
+	max-height: calc(100% - 50px);
+	height: 90%;
+	background-color: var(--grey-color);
 	border-radius: 10px;
 	padding: 15px;
 	gap:15px;
@@ -19,7 +19,7 @@
 .head{
 	justify-content: flex-start;
 	width: 100%;
-	border-bottom: 2px solid #95bf4875;
+	border-bottom: 1px solid #95bf4875;
 	padding-bottom:8px;
 }
 .close-icon{
@@ -32,27 +32,30 @@
 	cursor: pointer;
 }
 .nutrients{
-	height: 400px;
+	height: calc(100% - 50px);
 	width: 100%;
 }
 .tabs{
+	max-width: 100%;
+	width: 100%;
 	justify-content: flex-start;
-	padding: 0 5px;
 	gap:10px;
 	cursor: pointer;
 }
 .tabbing{
-	padding: 5px 60px;
+	padding: 6px 70px;
 	background-color: white;
-	border-radius: 3px 3px 0 0;
+	border-radius: 100px;
 	position: relative;
 }
 .details{
 	height: 100%;
-	padding: 5px;
+	overflow-y: auto;
+	width: 100%;
+	padding: 15px;
 	background-color: white;
-	border-radius: 0 0 5px 5px;
-	border-top: 2px solid var(--primary-color);
+	border-radius: 12px;
+	align-items: flex-start;
 }
 .active-tab{
 	background-color: var(--primary-color);

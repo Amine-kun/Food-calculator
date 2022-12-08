@@ -58,3 +58,12 @@ input[type="checkbox" i]{
 .quan{
 	margin-left: 30px;
 }
+
+.ingr{
+  max-width: 150px;
+  width: 100%;
+}
+.t-cells{
+  max-width: 80px;
+  width: 100%;
+}

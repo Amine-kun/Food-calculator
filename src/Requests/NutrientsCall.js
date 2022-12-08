@@ -1,4 +1,4 @@
-const AnalyseFood = () =>{
+const AnalyseFood = (ingredients) =>{
 	const options = {
 		method: 'GET',
 		headers: {
@@ -7,11 +7,13 @@ const AnalyseFood = () =>{
 		}
 	};
 
-	return fetch('https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=1%20large%20apple', options);
+	return fetch(`https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=${ingredients}`, options);
 }
 
-const LabelData = (data) =>{
+const LabelData = (data, ingredients) =>{
 	let NutritionData = {
+				ingr: ingredients,
+				calories:data.totalNutrients.ENERC_KCAL.quantity,
 				General:[{label:'Calories', quantity:data.totalNutrients.ENERC_KCAL.quantity, unit:data.totalNutrients.ENERC_KCAL.unit},
 						 {label:'Carbs', quantity:data.totalNutrients.CHOCDF.quantity, unit:data.totalNutrients.CHOCDF.unit},
 						 {label:'Protein', quantity:data.totalNutrients.PROCNT.quantity, unit:data.totalNutrients.PROCNT.unit},

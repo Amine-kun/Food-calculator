@@ -1,21 +1,11 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState} from 'react';
 import './sampleDetails.css';
 import NutrientsTables from '../../Components/NutrientsTables/NutrientsTables';
-import {AnalyseFood, LabelData} from '../../Requests/NutrientsCall';
 
 import {IoClose} from 'react-icons/io5';
 
 const SampleDetails = ({selected, setShowDetails}) => {
 	const [active, setActive] = useState(selected[0]);
-
-	useEffect(() => {
-		async function fetching(){
-			let res = await AnalyseFood();
-			let response = await res.json();
-			let lebeling = LabelData(response);
-		}
-		fetching();
-	}, [])
 
 	return (
 		<section className="main-details full-v app-flex">

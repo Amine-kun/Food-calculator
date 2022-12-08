@@ -143,3 +143,20 @@ select{
 .appear:hover{
 	color: grey;
 }
+.Note{
+	color: grey;
+}
+ul{
+	margin-top: 5px;
+}
+li{
+	margin-top: 4px;
+	margin-left:20px;
+	font-size: 14px;
+}
+.error{
+	border-color: #ff00005e;
+}
+.red {
+	color:  #ff00005e;
+}

@@ -24,7 +24,7 @@ const FoodDetails = ({id, setSelected, selected, foodNutrients, setFoodNutrients
 				<div className="data app-flex">
 					
 					{foodNutrients.General.map((obj, i)=>(
-						<h5 key={i} className="t-cells">{obj.quantity.toFixed(2)}</h5>
+						obj.label !== 'Calories' && <h5 key={i} className="t-cells">{obj.quantity.toFixed(2)}</h5>
 						))}
 
 				</div>

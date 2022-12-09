@@ -57,7 +57,7 @@ const Analyzer = () => {
 
 	return (
 		<>
-		{showDetails && <SampleDetails selected={selected} setShowDetails={setShowDetails}/>}
+		{showDetails && <SampleDetails selected={selected} setShowDetails={setShowDetails} foodNutrients={foodNutrients}/>}
 
 		<section className="analyzer full app-flex">
 			<div className="control-section app-flex-wrap">
@@ -69,10 +69,11 @@ const Analyzer = () => {
 					  <h5 className={`errorMsg ${error !== '' && 'errorMsgShow'}`}>{error}</h5>
 					</label>
 					<div className="Note">
-						<h4>Note:</h4>
+						<h4>Notes:</h4>
 						<ul>
 							<li>You must enter your ingredients as precise as possible, and Coherant.</li>
 							<li>You must add the amount of the targeted ingredient, e.g. 2 Large Apples.</li>
+							<li>If an ingredient size hasn't been given, it will be treated as Medium Size.</li>
 							<li>Food Nutrients might not be 100% Calculated.</li>
 							<li>Happy Diet! :D</li>
 						</ul>
@@ -111,6 +112,18 @@ const Analyzer = () => {
 						<BiDetail className=""/>
 						<h5>More info</h5>
 					</div>
+				</div>
+				<div className='bar-2'></div>
+				<div className="label-line app-flex">
+					<BsCheck className="check-icon"/>
+					<h5>Ingredients</h5>
+					<h5 style={{marginLeft:'110px'}}>Calories</h5>
+					<span className="generals app-flex">
+						<h5>Carbs</h5>
+						<h5>Protein</h5>
+						<h5>Fat</h5>
+						<h5>Water</h5>
+					</span>
 				</div>
 				<div className='bar-2'></div>
 				<div className="detailer app-flex-wrap">

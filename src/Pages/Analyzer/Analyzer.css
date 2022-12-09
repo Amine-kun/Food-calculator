@@ -171,3 +171,20 @@ li{
 .errorMsgShow{
 	opacity: 1;
 }
+.label-line{
+	justify-content: flex-start;
+	padding-left: 15px;
+	padding-right: 15px;
+	opacity: 0.8;
+}
+
+.check-icon{
+	font-size: 1.8rem;
+}
+.generals{
+	margin-left: auto;
+	gap: 45px;
+}
+.generals h5{
+	width: 41px;
+}

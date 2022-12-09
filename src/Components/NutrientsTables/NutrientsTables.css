@@ -39,5 +39,6 @@ tr:last-child td:last-child {
         padding: 8px 15px;
         width: 100%;
 }
-.table-keys{
+.value{
+    font-weight: bold;
 }

@@ -19,18 +19,29 @@ const Analyzer = () => {
 	const [foodNutrients, setFoodNutrients] = useState([]);
 	const [ingredients, setIngredients] = useState('');
 	const [showDetails, setShowDetails] = useState(false);
-	const [error, setError] = useState(false);
+	const [error, setError] = useState('');
+
+	const checkForDuplicates = () =>{
+		let checker = foodNutrients.find(obj => obj.ingr === ingredients );
+		if(checker?.ingr){
+			return true;
+		}
+		return false;
+	}
 
 	const getNutrients = async (ingredients) =>{
 		if(ingredients === '') {
-			setError(true);
-			setTimeout(()=>{setError(false)}, 1000)
-		} else {
+			setError('Enter Ingredients');
+			setTimeout(()=>{setError('')}, 1000)
+		} else if(!checkForDuplicates()) {
 			let res = await AnalyseFood(ingredients);
 			let response = await res.json();
 			let labeling = LabelData(response, ingredients);
 
 			foodNutrients.length > 0 ? setFoodNutrients((prev)=>[...prev , labeling]) : setFoodNutrients([labeling])
+		} else {
+			setError('Already Exists');
+			setTimeout(()=>{setError('')}, 1000)
 		}
 	}
 
@@ -39,9 +50,10 @@ const Analyzer = () => {
 		let  filtering = foodNutrients.filter((foodObj)=>
 			!selected.some(obj=> foodObj.ingr === obj)
 		)
-
+		setSelected([]);
 		setFoodNutrients(filtering);
 	}
+
 
 	return (
 		<>
@@ -51,9 +63,10 @@ const Analyzer = () => {
 			<div className="control-section app-flex-wrap">
 				<h5 className="heading">Select food sample</h5>
 				<div className="selectors app-flex-wrap">
-					<label htmlFor="ingr" className={`app-flex input ${error && 'error'}`} onChange={(e)=>setIngredients(e.target.value)}>
+					<label htmlFor="ingr" className={`app-flex input ${error !== '' && 'error'}`} onChange={(e)=>setIngredients(e.target.value)}>
 					  <input type="text" id="ingr" min="0" name="ingr" placeholder=" " className="user-input"/>
 					  <label htmlFor="ingr" className={`label ${error && 'red'}`}>Ingredients</label>
+					  <h5 className={`errorMsg ${error !== '' && 'errorMsgShow'}`}>{error}</h5>
 					</label>
 					<div className="Note">
 						<h4>Note:</h4>

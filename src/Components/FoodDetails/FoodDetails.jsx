@@ -12,9 +12,10 @@ const FoodDetails = ({id, setSelected, selected, foodNutrients, setFoodNutrients
 		}
 	}
 
+
 	return (
 		<label htmlFor={id} className="food app-flex" key={id}>
-			<input id={id} type="checkbox" className="checker"  onClick={setCard}/>
+			<input id={id} type="checkbox" className="checker" checked={selected.includes(name) ? true : false} onClick={setCard}/>
 			<div className="checkmark"></div>
 			<h5 className="ingr">{name}</h5>
 			<h5 className='quan'>

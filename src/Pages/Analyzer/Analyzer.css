@@ -160,3 +160,14 @@ li{
 .red {
 	color:  #ff00005e;
 }
+.errorMsg{
+	position: absolute;
+	right:0;
+	bottom:-22px;
+	color: #ff00005e;
+	opacity: 0;
+	transition: all 0.2s;
+} 
+.errorMsgShow{
+	opacity: 1;
+}

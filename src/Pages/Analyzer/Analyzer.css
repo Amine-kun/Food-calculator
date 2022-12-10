@@ -131,7 +131,7 @@ select{
 	border-left: 2px solid #95bf4838;
 }
 .detailer{
-	max-height: calc(100% - 150px);
+	max-height: calc(100% - 200px);
 	justify-content: flex-start;
 	overflow-y:auto ;
 }

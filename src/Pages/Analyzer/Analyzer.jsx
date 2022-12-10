@@ -3,6 +3,7 @@ import './Analyzer.css';
 import '../Signup/Signup.css';
 import FoodDetails from '../../Components/FoodDetails/FoodDetails';
 import SampleDetails from '../sampleDetails/sampleDetails';
+import Message from '../../Components/Message/Message';
 import {AnalyseFood, LabelData} from '../../Requests/NutrientsCall';
 
 import {RiAddFill} from 'react-icons/ri';
@@ -12,6 +13,7 @@ import {BiDish, BiDetail} from 'react-icons/bi';
 import {BsCheck} from 'react-icons/bs';
 
 const Analyzer = () => {
+	const [loading, setLoading] = useState(false);
 
 	const [show, setShow] = useState(false);
 	const [active, setActive] = useState('All meals');
@@ -20,6 +22,7 @@ const Analyzer = () => {
 	const [ingredients, setIngredients] = useState('');
 	const [showDetails, setShowDetails] = useState(false);
 	const [error, setError] = useState('');
+	const [status, setStatus] = useState({status:false, message:''});
 
 	const checkForDuplicates = () =>{
 		let checker = foodNutrients.find(obj => obj.ingr === ingredients );
@@ -30,15 +33,24 @@ const Analyzer = () => {
 	}
 
 	const getNutrients = async (ingredients) =>{
+		setStatus({status:true, message:''})
+		setLoading(true)
+
 		if(ingredients === '') {
 			setError('Enter Ingredients');
 			setTimeout(()=>{setError('')}, 1000)
+
 		} else if(!checkForDuplicates()) {
+			
 			let res = await AnalyseFood(ingredients);
 			let response = await res.json();
+			console.log(res, response);
 			let labeling = LabelData(response, ingredients);
 
-			foodNutrients.length > 0 ? setFoodNutrients((prev)=>[...prev , labeling]) : setFoodNutrients([labeling])
+			foodNutrients.length > 0 ? setFoodNutrients((prev)=>[...prev , labeling]) : setFoodNutrients([labeling]);
+			setLoading(false)
+			setTimeout(()=>{setStatus({status:false, message:''})}, 1500)
+
 		} else {
 			setError('Already Exists');
 			setTimeout(()=>{setError('')}, 1000)
@@ -58,6 +70,7 @@ const Analyzer = () => {
 	return (
 		<>
 		{showDetails && <SampleDetails selected={selected} setShowDetails={setShowDetails} foodNutrients={foodNutrients}/>}
+		<Message status={status} loading={loading}/>
 
 		<section className="analyzer full app-flex">
 			<div className="control-section app-flex-wrap">

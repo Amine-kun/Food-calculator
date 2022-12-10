@@ -1,0 +1,13 @@
+@keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+.loading-icon{
+	font-size: 1.8rem;
+	-webkit-animation: rotation 2s infinite linear;
+	color: white;
+}

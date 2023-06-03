@@ -44,7 +44,7 @@ const Analyzer = () => {
 			
 			let res = await AnalyseFood(ingredients);
 			let response = await res.json();
-			console.log(res, response);
+			
 			let labeling = LabelData(response, ingredients);
 
 			foodNutrients.length > 0 ? setFoodNutrients((prev)=>[...prev , labeling]) : setFoodNutrients([labeling]);

@@ -42,14 +42,14 @@ const Sidebar = () => {
 						 ?	<>
 								{nav.url !== 'History' 
 								&& <>
-									<NavLink className="tab app-flex" to={`${nav.url}`}>
+									<NavLink className="tab app-flex" to={`${nav.url}`} key={i}>
 										<nav.icon className="tab-icon"/>
 										{nav.nav}
 									</NavLink> 
 								  </> }
 							</>
 						 : 	<>
-								<NavLink className="tab app-flex" to={`${nav.url}`}>
+								<NavLink className="tab app-flex" to={`${nav.url}`} key={i}>
 									<nav.icon className="tab-icon"/>
 									{nav.nav}
 								</NavLink> 

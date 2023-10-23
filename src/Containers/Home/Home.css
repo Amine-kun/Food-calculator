@@ -8,4 +8,5 @@
 	width: calc(100% - 260px);
 	height: 100%;
 	color: var(--black-color);
+	overflow-y: auto;
 }

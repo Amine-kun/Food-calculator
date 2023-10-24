@@ -60,12 +60,12 @@ const Recipes = () => {
 	}
 
 	useEffect(() => {
-		// (async()=>{
-		// 	let res = await randomCall();
-		// 	let response = await res.json();
+		 (async()=>{
+		 	let res = await randomCall();
+		 	let response = await res.json();
 
-		// 	setData(response.recipes)
-		// })();
+		 	setData(response.recipes)
+		 })();
 	}, [])
 
 	return (

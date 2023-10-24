@@ -61,7 +61,7 @@ const Recipes = () => {
 
 	useEffect(() => {
 		 (async()=>{
-		 	let res = await randomCall();
+		 	let res = await calls.randomCall();
 		 	let response = await res.json();
 
 		 	setData(response.recipes)
